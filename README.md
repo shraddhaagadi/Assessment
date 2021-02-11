@@ -1,5 +1,5 @@
 # Assessment
 
-BLE communication and control leds;
+BLE communication and control LEDs via app (nRF connect for mobile);
 Measure internal temp of nRF52;
-Meaure ambient temp with PT100
+Measure ambient temp with PT100
