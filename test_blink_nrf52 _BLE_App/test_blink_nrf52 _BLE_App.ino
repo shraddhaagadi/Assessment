@@ -1,17 +1,16 @@
-// Import libraries (BLEPeripheral depends on SPI)
+
 #include <SPI.h>
 #include <BLEPeripheral.h>
 
-//////////////
+
 // Hardware //
-//////////////
+
 #define LED_PIN 9// LED on pin 7
 #define LED_ACTIVE HIGH // Pin 7 LED is active low
 #define LED_DEFAULT LOW
-
 ///////////////////////
 // BLE Advertisments //
-///////////////////////
+
 const char * localName = "nRF52832_test";
 BLEPeripheral blePeriph;
 BLEService bleServ("1207");
@@ -19,7 +18,7 @@ BLECharCharacteristic ledChar("1207", BLERead | BLEWrite);
 
 void setup() 
 {
-  Serial.begin(115200); // Set up serial at 115200 baud
+  Serial.begin(115200); 
 
   pinMode(LED_PIN, OUTPUT);
   digitalWrite(LED_PIN, !LED_ACTIVE);
@@ -68,10 +67,10 @@ void setupBLE()
   // Add characteristic
   blePeriph.addAttribute(ledChar);
 
-  // Now that device6, service, characteristic are set up,
+  
   // initialize BLE:
   blePeriph.begin();
 
-  // Set led characteristic to default value:
+  // Set led characteristic 
   ledChar.setValue(!LED_ACTIVE);  
 }
